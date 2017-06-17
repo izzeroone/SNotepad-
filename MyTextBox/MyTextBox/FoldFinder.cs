@@ -51,6 +51,8 @@ namespace MyTextBox
                 }
                 else
                 {
+                    if (stack.Count == 0)
+                        continue;
                     currentItem = stack.Pop();
                     if (currentItem.Delimter == matchedDelimiter)
                     {

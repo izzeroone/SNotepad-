@@ -2060,20 +2060,25 @@ namespace MyTextBox
             }
             string nestedText;
             int tempInt;
-            foreach (SectionPosition section in nestedList)
+            for(int i = 0; i < nestedList.Count; i++)
             {
+                SectionPosition section = nestedList[i];
                 Select(section.Start + 1, section.End - section.Start - 2);
                 nestedText = SelectedText;
                 // check if the code is folded
                 if (!nestedText.StartsWith("folded"))
                 {
                     NewFolded(nestedText);
+                    nestedList = FoldFinder.Instance.Find(this.Text, regexList);
+                    i = 0;
                 }
                 else
                 {
                     if (!int.TryParse(nestedText.Substring(6),out tempInt))
                     {
                         NewFolded(nestedText);
+                        nestedList = FoldFinder.Instance.Find(this.Text, regexList);
+                        i = 0;
                     }
                 }
             }
@@ -2092,8 +2097,9 @@ namespace MyTextBox
             string nestedText;
             int foldedIndex;
             FoldedState currentFolded;
-            foreach (SectionPosition section in nestedList)
+            for (int i = 0; i < nestedList.Count; i++)
             {
+                SectionPosition section = nestedList[i];
                 Select(section.Start + 1, section.End - section.Start - 2);
                 nestedText = SelectedText;
                 // check if the code is folded
@@ -2106,6 +2112,8 @@ namespace MyTextBox
                             currentFolded = foldedList[foldedIndex];
                             SelectedText = currentFolded.Content;
                             foldedList.Remove(foldedIndex);
+                            nestedList = FoldFinder.Instance.Find(this.Text, regexList);
+                            i = 0;
                         }
                         catch { }
                     }
