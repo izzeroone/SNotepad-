@@ -62,10 +62,6 @@ namespace MyTextBox
                         // if searching for an end, and we've passed it, and the stack is empty then quit.
                         if (end > -1 && currentItem.Position.End >= end && stack.Count == 0) break;
                     }
-                    else
-                    {
-                       
-                    }
                 }
             }
 

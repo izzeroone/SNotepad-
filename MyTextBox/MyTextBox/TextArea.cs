@@ -1999,8 +1999,8 @@ namespace MyTextBox
             // find the nested
             nestedList = FoldFinder.Instance.Find(this.Text, regexList, firstIndex, lastIndex);
         }
-        
-        private void NewFolded(string content)
+
+        private void NewFolded(SectionPosition section)
         {
             int maxIndex;
             //get the index for saving the folded
@@ -2013,7 +2013,9 @@ namespace MyTextBox
                 maxIndex = 1;
             }
             //fold the text
-            foldedList.Add(maxIndex, new FoldedState() { Header = maxIndex, Content = content });
+            Select(section.Start + 1, section.End - section.Start - 2);
+            string nestedText = SelectedText;
+            foldedList.Add(maxIndex, new FoldedState() { Header = maxIndex, Content = nestedText});
             SelectedText = "folded" + maxIndex;
         }
         //handle click to fold/unfold
@@ -2038,6 +2040,7 @@ namespace MyTextBox
                     //check if folded index is a number
                     if (int.TryParse(nestedText.Substring(6), out foldedIndex))
                     {
+                        //foldedIndex may not be in foldedList so we use try catch for safety
                         try
                         {
                             currentFolded = foldedList[foldedIndex];
@@ -2053,7 +2056,7 @@ namespace MyTextBox
                 }
                 // it is unfold so fold it
                 {
-                    NewFolded(nestedText);
+                    NewFolded(section);
                 }
             }
             //blockRecordingUndo = false;
@@ -2114,10 +2117,10 @@ namespace MyTextBox
                             currentFolded = foldedList[foldedIndex];
                             SelectedText = currentFolded.Content;
                             // Unfolded code may contain fold code, so we scan again
-                            Unfold(SelectionStart, SelectionStart + SelectionLength - 1);
+                            Unfold(section.Start + 1, section.Start + currentFolded.Content.Length);
                             // Unfolded change the location of the nested code, so we scan again, ignore recently unfolded code
-                            nestedList = FoldFinder.Instance.Find(this.Text, regexList, section.Start + currentFolded.Content.Length);
-                            foldedList.Remove(foldedIndex);
+                            nestedList = FoldFinder.Instance.Find(this.Text, regexList, start, end);
+                            i = nestedList.FindIndex((x) => { return x.Start == section.Start; });
                         }
                         catch { }
                     }
@@ -2138,7 +2141,7 @@ namespace MyTextBox
                 // check if the code is folded
                 if (!nestedText.StartsWith("folded"))
                 {
-                    NewFolded(nestedText);
+                    NewFolded(section);
                     nestedList = FoldFinder.Instance.Find(this.Text, regexList, start, end);
                     //the folded text may contain another folded text, so we minus the number of folded text
                     i = i - FoldFinder.Instance.Find(nestedText, regexList).Count;
