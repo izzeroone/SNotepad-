@@ -2019,7 +2019,7 @@ namespace MyTextBox
         //handle click to fold/unfold
         private void NumberMargin_MouseClick(object sender, MouseEventArgs e)
         {
-            blockRecordingUndo = true;
+            //blockRecordingUndo = true;
             string nestedText;
             FoldedState currentFolded;
             //get the clicked line
@@ -2041,7 +2041,9 @@ namespace MyTextBox
                         try
                         {
                             currentFolded = foldedList[foldedIndex];
+                            blockAllAction = true;
                             SelectedText = currentFolded.Content;
+                            blockAllAction = false;
                             foldedList.Remove(foldedIndex);
                             return;
                         }
@@ -2054,7 +2056,7 @@ namespace MyTextBox
                     NewFolded(nestedText);
                 }
             }
-            blockRecordingUndo = false;
+            //blockRecordingUndo = false;
         }
         //fold all the text
         public void FoldAll()
