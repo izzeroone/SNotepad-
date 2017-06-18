@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,7 +45,7 @@ namespace NotePad__
 
 
         static XmlDocument xmlDoc = new XmlDocument();
-        private static string xmlFilePath = System.IO.Path.Combine(Application.StartupPath, "settings.xml");
+        private static string xmlFilePath = "../../settings.xml";
 
         public static void GetAllStylesIntoProperties()
         {
@@ -109,5 +109,53 @@ namespace NotePad__
             return Color.FromArgb(int.Parse(colorText));
         }
 
+        public static void SaveAsDefaultStyles()
+        {
+            xmlDoc.Load(xmlFilePath);
+
+            //Theme
+            SaveSetting("Settings/UserSettings/General/Theme", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/Theme").InnerText);
+
+            //BackColor
+            SaveSetting("Settings/UserSettings/General/BackColor", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/BackColor").InnerText);
+
+            //Laguage
+            SaveSetting("Settings/UserSettings/TextArea/DefaultColor", xmlDoc.SelectSingleNode("Settings/DefaultSettings/TextArea/DefaultColor").InnerText);
+            SaveSetting("Settings/UserSettings/TextArea/KeywordsColor", xmlDoc.SelectSingleNode("Settings/DefaultSettings/TextArea/KeywordsColor").InnerText);
+            SaveSetting("Settings/UserSettings/TextArea/StringsColor", xmlDoc.SelectSingleNode("Settings/DefaultSettings/TextArea/StringsColor").InnerText);
+            SaveSetting("Settings/UserSettings/TextArea/CommentLinesColor", xmlDoc.SelectSingleNode("Settings/DefaultSettings/TextArea/CommentLinesColor").InnerText);
+            SaveSetting("Settings/UserSettings/TextArea/CommentBlocksColor", xmlDoc.SelectSingleNode("Settings/DefaultSettings/TextArea/CommentBlocksColor").InnerText);
+            SaveSetting("Settings/UserSettings/TextArea/DefaultLanguage", xmlDoc.SelectSingleNode("Settings/DefaultSettings/TextArea/DefaultLanguage").InnerText);
+
+            //Others
+            SaveSetting("Settings/UserSettings/DocumentMap/BackColor", xmlDoc.SelectSingleNode("Settings/DefaultSettings/DocumentMap/BackColor").InnerText);
+            SaveSetting("Settings/UserSettings/DocumentMap/ForeColor", xmlDoc.SelectSingleNode("Settings/DefaultSettings/DocumentMap/ForeColor").InnerText);
+            SaveSetting("Settings/UserSettings/NumberMargin/BackColor", xmlDoc.SelectSingleNode("Settings/DefaultSettings/NumberMargin/BackColor").InnerText);
+            SaveSetting("Settings/UserSettings/NumberMargin/ForeColor", xmlDoc.SelectSingleNode("Settings/DefaultSettings/NumberMargin/ForeColor").InnerText);
+            SaveSetting("Settings/UserSettings/BookmarkMargin/BackColor", xmlDoc.SelectSingleNode("Settings/DefaultSettings/BookmarkMargin/BackColor").InnerText);
+            SaveSetting("Settings/UserSettings/BookmarkMargin/ForeColor", xmlDoc.SelectSingleNode("Settings/DefaultSettings/BookmarkMargin/ForeColor").InnerText);
+
+            //show status bar
+            SaveSetting("Settings/UserSettings/General/ShowStatusBar", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/ShowStatusBar").InnerText);
+            //hide task bar
+            SaveSetting("Settings/UserSettings/General/HideTaskBar", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/HideTaskBar").InnerText);
+
+            //Task bar
+            SaveSetting("Settings/UserSettings/General/New", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/New").InnerText);
+            SaveSetting("Settings/UserSettings/General/Open", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/Open").InnerText);
+            SaveSetting("Settings/UserSettings/General/Save", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/Save").InnerText);
+            SaveSetting("Settings/UserSettings/General/DocumentMap", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/DocumentMap").InnerText);
+            SaveSetting("Settings/UserSettings/General/Find", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/Find").InnerText);
+            SaveSetting("Settings/UserSettings/General/FindAndReplace", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/FindAndReplace").InnerText);
+            SaveSetting("Settings/UserSettings/General/ToUpper", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/ToUpper").InnerText);
+            SaveSetting("Settings/UserSettings/General/Versions", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/Versions").InnerText);
+            SaveSetting("Settings/UserSettings/General/Copy", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/Copy").InnerText);
+            SaveSetting("Settings/UserSettings/General/Cut", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/Cut").InnerText);
+            SaveSetting("Settings/UserSettings/General/Paste", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/Paste").InnerText);
+            SaveSetting("Settings/UserSettings/General/Font", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/Font").InnerText);
+            SaveSetting("Settings/UserSettings/General/Bold", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/Bold").InnerText);
+            SaveSetting("Settings/UserSettings/General/Italic", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/Italic").InnerText);
+            SaveSetting("Settings/UserSettings/General/Underline", xmlDoc.SelectSingleNode("Settings/DefaultSettings/General/Underline").InnerText);
+        }
     }
 }
