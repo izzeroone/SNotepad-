@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Xml;
 using System.Windows.Forms;
 
+//Styles Class
 namespace NotePad__
 {
     class StylesClass
