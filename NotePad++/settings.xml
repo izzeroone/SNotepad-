@@ -1,52 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Settings>
   <DefaultSettings>
     <General>
-      <Theme>Default</Theme>
-      <BackColor>White</BackColor>
-      <ShowStatusBar>true</ShowStatusBar>
-      <HideTaskBar>false</HideTaskBar>
-      <New>true</New>
-      <Open>true</Open>
-      <Save>true</Save>
-      <DocumentMap>true</DocumentMap>
-      <Find>true</Find>
-      <FindAndReplace>true</FindAndReplace>
-      <ToUpper>true</ToUpper>
-      <Versions>true</Versions>
-      <Copy>true</Copy>
-      <Cut>true</Cut>
-      <Paste>true</Paste>
-      <Font>true</Font>
-      <Bold>true</Bold>
-      <Italic>true</Italic>
-      <Underline>true</Underline>
-    </General>
-    <TextArea>
-      <DefaultColor>Black</DefaultColor>
-      <KeywordsColor>Blue</KeywordsColor>
-      <StringsColor>Brown</StringsColor>
-      <CommentLinesColor>Green</CommentLinesColor>
-      <CommentBlocksColor>DarkGreen</CommentBlocksColor>
-      <DefaultLanguage>NormalText</DefaultLanguage>
-    </TextArea>
-    <DocumentMap>
-      <BackColor>InactiveBorder</BackColor>
-      <ForeColor>Black</ForeColor>
-    </DocumentMap>
-    <NumberMargin>
-      <BackColor>ControlDark</BackColor>
-      <ForeColor>Black</ForeColor>
-    </NumberMargin>
-    <BookmarkMargin>
-      <BackColor>ControlDark</BackColor>
-      <ForeColor>Red</ForeColor>
-    </BookmarkMargin>
-  </DefaultSettings>
-  <UserSettings>
-    <General>
       <Theme>Custom</Theme>
-      <BackColor>-15067364</BackColor>
+      <BackColor>-1</BackColor>
       <ShowStatusBar>True</ShowStatusBar>
       <HideTaskBar>False</HideTaskBar>
       <New>true</New>
@@ -66,7 +23,50 @@
       <Underline>False</Underline>
     </General>
     <TextArea>
-      <DefaultColor>-1</DefaultColor>
+      <DefaultColor>-16777216</DefaultColor>
+      <KeywordsColor>-16671494</KeywordsColor>
+      <StringsColor>-256</StringsColor>
+      <CommentLinesColor>-16735232</CommentLinesColor>
+      <CommentBlocksColor>-16760832</CommentBlocksColor>
+      <DefaultLanguage>C#</DefaultLanguage>
+    </TextArea>
+    <DocumentMap>
+      <BackColor>-4144960</BackColor>
+      <ForeColor>-16777216</ForeColor>
+    </DocumentMap>
+    <NumberMargin>
+      <BackColor>-4144960</BackColor>
+      <ForeColor>-16777216</ForeColor>
+    </NumberMargin>
+    <BookmarkMargin>
+      <BackColor>-8355712</BackColor>
+      <ForeColor>-65536</ForeColor>
+    </BookmarkMargin>
+  </DefaultSettings>
+  <UserSettings>
+    <General>
+      <Theme>Custom</Theme>
+      <BackColor>-1</BackColor>
+      <ShowStatusBar>True</ShowStatusBar>
+      <HideTaskBar>False</HideTaskBar>
+      <New>true</New>
+      <Open>true</Open>
+      <Save>True</Save>
+      <DocumentMap>True</DocumentMap>
+      <Find>True</Find>
+      <FindAndReplace>True</FindAndReplace>
+      <ToUpper>True</ToUpper>
+      <Versions>True</Versions>
+      <Copy>true</Copy>
+      <Cut>true</Cut>
+      <Paste>True</Paste>
+      <Font>False</Font>
+      <Bold>False</Bold>
+      <Italic>False</Italic>
+      <Underline>False</Underline>
+    </General>
+    <TextArea>
+      <DefaultColor>-16777216</DefaultColor>
       <KeywordsColor>-16671494</KeywordsColor>
       <StringsColor>-256</StringsColor>
       <CommentLinesColor>-16735232</CommentLinesColor>
