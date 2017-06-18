@@ -45,7 +45,7 @@ namespace NotePad__
 
 
         static XmlDocument xmlDoc = new XmlDocument();
-        private static string xmlFilePath = "../../settings.xml";
+        private static string xmlFilePath = System.IO.Path.Combine(Application.StartupPath, "settings.xml");
 
         public static void GetAllStylesIntoProperties()
         {
