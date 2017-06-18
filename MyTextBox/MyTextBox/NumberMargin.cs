@@ -248,29 +248,40 @@ namespace MyTextBox
             //check all nested code in textbox
             foreach (SectionPosition section in parentTextArea.nestedList)
             {
-                int StartLineNumber = parentTextArea.GetLineFromCharIndex(section.Start);
-                int EndLineNumber = parentTextArea.GetLineFromCharIndex(section.End);
-                bool sectionStartVisible = StartLineNumber >= FirstVisiableLineNumber && StartLineNumber <= LastVisiableLineNumber;
-                bool sectionEndVisible = EndLineNumber >= FirstVisiableLineNumber && EndLineNumber <= LastVisiableLineNumber;
+                int startLineNumber = parentTextArea.GetLineFromCharIndex(section.Start);
+                int endLineNumber = parentTextArea.GetLineFromCharIndex(section.End);
+                bool sectionStartVisible = startLineNumber >= FirstVisiableLineNumber && startLineNumber <= LastVisiableLineNumber;
+                bool sectionEndVisible = endLineNumber >= FirstVisiableLineNumber && endLineNumber <= LastVisiableLineNumber;
                 //draw the section rectangle + minus sign
                 if (sectionStartVisible)
                 {
-                    e.Graphics.DrawRectangle(new Pen(ExForeColor), numberWidth + foldPadding + 2, (StartLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height - 10) / 2), 10, 10);
-                    e.Graphics.DrawLine(new Pen(ExForeColor), numberWidth + foldPadding + 7, (StartLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height - 10) / 2) + 2, numberWidth + foldPadding + 7, (StartLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height - 10) / 2) + 8);
+                    e.Graphics.DrawRectangle(new Pen(ExForeColor), numberWidth + foldPadding + 2, (startLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height - 10) / 2), 10, 10);
+                    e.Graphics.DrawLine(new Pen(ExForeColor), numberWidth + foldPadding + 7, (startLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height - 10) / 2) + 2, numberWidth + foldPadding + 7, (startLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height - 10) / 2) + 8);
                 }
                 //draw end of the section
                 if (sectionEndVisible)
                 {
-                   e.Graphics.DrawLine(new Pen(ExForeColor), numberWidth + foldPadding + 5, (EndLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height) / 2), numberWidth + foldPadding + 10, (EndLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height) / 2));
+                    if (startLineNumber != endLineNumber)
+                    {
+                        e.Graphics.DrawLine(new Pen(ExForeColor), numberWidth + foldPadding + 7, (endLineNumber - FirstVisiableLineNumber) * ExFont.Height, numberWidth + foldPadding + 7, (endLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height) / 2));
+                        e.Graphics.DrawLine(new Pen(ExForeColor), numberWidth + foldPadding + 7, (endLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height) / 2), numberWidth + foldPadding + 12, (endLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height) / 2));
+                    }
+                    else
+                    {
+                        e.Graphics.DrawLine(new Pen(ExForeColor), numberWidth + foldPadding + 4, (endLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height) / 2), numberWidth + foldPadding + 10, (endLineNumber - FirstVisiableLineNumber) * ExFont.Height + Convert.ToInt32((ExFont.Height) / 2));
+                    }
                 }
                 //draw line along the section
                 if (sectionStartVisible || sectionEndVisible)
                 {
-                    int start = Math.Max(StartLineNumber, FirstVisiableLineNumber);
-                    int end = Math.Min(EndLineNumber, LastVisiableLineNumber);
+                    int start = Math.Max(startLineNumber, FirstVisiableLineNumber);
+                    int end = Math.Min(endLineNumber, LastVisiableLineNumber);
                     for (start++; start < end; start++)
                     {
-                        e.Graphics.DrawLine(new Pen(ExForeColor), numberWidth + foldPadding + 5, (start - FirstVisiableLineNumber) * ExFont.Height, numberWidth + foldPadding + 5, (start - FirstVisiableLineNumber + 1) * ExFont.Height);
+                        if (!parentTextArea.nestedList.Exists((x) => { return parentTextArea.GetLineFromCharIndex(x.Start) == start; }))
+                        {
+                            e.Graphics.DrawLine(new Pen(ExForeColor), numberWidth + foldPadding + 7, (start - FirstVisiableLineNumber) * ExFont.Height, numberWidth + foldPadding + 7, (start - FirstVisiableLineNumber + 1) * ExFont.Height);
+                        }     
                     }
                 }
             }
