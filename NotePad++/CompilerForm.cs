@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -116,5 +116,12 @@ namespace NotePad__
 
             }
         }
+
+        private void CompilerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Visible = false;
+            e.Cancel = true;
+        }
+
     }
 }
