@@ -56,9 +56,6 @@ namespace MyTextBox
                     currentItem = stack.Pop();
                     if (currentItem.Delimter == matchedDelimiter)
                     {
-                        Console.WriteLine(match.Index);
-                        Console.WriteLine(match.Length);
-                        Console.WriteLine(match.Value);
                         currentItem.Position.End = match.Index + match.Length;
                         positions.Add(currentItem.Position);
 
@@ -67,7 +64,65 @@ namespace MyTextBox
                     }
                     else
                     {
-                        //throw new Exception(string.Format("Invalid Ending Token at {0}", match.Index));
+                       
+                    }
+                }
+            }
+
+            //if (stack.Count > 0) throw new Exception("Not enough closing symbols.");
+
+            return positions;
+        }
+
+        public List<SectionPosition> FindFirst(string code, List<SectionDelimiter> delimiters, int start = 0,
+            int end = -1)
+        {
+            List<SectionPosition> positions = new List<SectionPosition>();
+            Stack<SectionStackItem> stack = new Stack<SectionStackItem>();
+
+            int regexGroupIndex;
+            bool isStartToken;
+            SectionDelimiter matchedDelimiter;
+            SectionStackItem currentItem;
+
+            Regex scanner = RegexifyDelimiters(delimiters);
+
+            foreach (Match match in scanner.Matches(code, start))
+            {
+                // the pattern for every group is that 0 corresponds to SectionDelimter, 1 corresponds to Start
+                // and 2, corresponds to End.
+                regexGroupIndex =
+                    match.Groups.Cast<Group>().Select((g, i) => new {
+                        Success = g.Success,
+                        Index = i
+                    })
+                    .Where(r => r.Success && r.Index > 0).First().Index;
+                matchedDelimiter = delimiters[(regexGroupIndex - 1) / 3];
+                isStartToken = match.Groups[regexGroupIndex + 1].Success;
+                if (isStartToken)
+                {
+                    stack.Push(new SectionStackItem()
+                    {
+                        Delimter = matchedDelimiter,
+                        Position = new SectionPosition() { Start = match.Index }
+                    });
+                }
+                else
+                {
+                    if (stack.Count == 0)
+                        continue;
+                    currentItem = stack.Pop();
+                    if (currentItem.Delimter == matchedDelimiter)
+                    {
+                        currentItem.Position.End = match.Index + match.Length;
+                        positions.Add(currentItem.Position);
+                        return positions;
+                        // if searching for an end, and we've passed it, and the stack is empty then quit.
+                        if (end > -1 && currentItem.Position.End >= end && stack.Count == 0) break;
+                    }
+                    else
+                    {
+
                     }
                 }
             }

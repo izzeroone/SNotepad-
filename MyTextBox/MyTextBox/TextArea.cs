@@ -80,7 +80,7 @@ namespace MyTextBox
         private List<SectionDelimiter> regexList = new List<SectionDelimiter>();
         public List<SectionPosition> nestedList = new List<SectionPosition>();
         private SortedDictionary<int, FoldedState> foldedList = new SortedDictionary<int, FoldedState>();
-
+        private int lineOffset = 5;
 
         #region All fields related to printing action
 
@@ -904,6 +904,8 @@ namespace MyTextBox
             firstVisibleLine = this.GetLineFromCharIndex(firstVisibleCharIndex);
             lastVisibleLine = this.GetLineFromCharIndex(lastVisibleCharIndex);
 
+            //Redraw the folding
+            AutoCodeFolding(language);
 
             if (numberMargin != null && numberMargin.IsNeededAutoNumbering)
             {
@@ -938,6 +940,8 @@ namespace MyTextBox
             firstVisibleLine = this.GetLineFromCharIndex(firstVisibleCharIndex);
             lastVisibleLine = this.GetLineFromCharIndex(lastVisibleCharIndex);
 
+            //Redraw the folding
+            AutoCodeFolding(language);
 
             if (numberMargin != null && numberMargin.IsNeededAutoNumbering)
             {
@@ -972,6 +976,8 @@ namespace MyTextBox
             firstVisibleLine = this.GetLineFromCharIndex(firstVisibleCharIndex);
             lastVisibleLine = this.GetLineFromCharIndex(lastVisibleCharIndex);
 
+            //Redraw the folding
+            AutoCodeFolding(language);
 
             if (numberMargin != null && numberMargin.IsNeededAutoNumbering)
             {
@@ -1980,18 +1986,17 @@ namespace MyTextBox
             {
                 case "NormalText":
                 case "VB":
-                        break;
-                default:
-                    nestedList = FoldFinder.Instance.Find(this.Text, regexList);
-                    break;
-            }    
+                        break;    
+            }
+            //caculator the fold find region in the screen plus offset
+            int firstLine = Math.Max(0, GetFirstVisiableLine() - lineOffset);
+            int lastLine = Math.Min(GetLastVisiableLine() + lineOffset, NumberOfLine);
+            int firstIndex = GetFirstCharIndexFromLine(firstLine);
+            int lastIndex = GetFirstCharIndexFromLine(lastLine);
+            // find the nested
+            nestedList = FoldFinder.Instance.Find(this.Text, regexList, firstIndex, lastIndex);
         }
-        private int GetLineFromMouseClick(Point pt)
-        {
-            int charIndex = GetCharIndexFromPosition(pt);
-            int lineIndex = GetLineFromCharIndex(charIndex);
-            return lineIndex;
-        }
+        
         private void NewFolded(string content)
         {
             int maxIndex;
@@ -2004,7 +2009,7 @@ namespace MyTextBox
             {
                 maxIndex = 1;
             }
-            //folded the text
+            //fold the text
             foldedList.Add(maxIndex, new FoldedState() { Header = maxIndex, Content = content });
             SelectedText = "folded" + maxIndex;
         }
@@ -2052,6 +2057,13 @@ namespace MyTextBox
         public void FoldAll()
         {
             blockRecordingUndo = true;
+
+            if (controlToFocus != null)
+            {
+                //Focus another control to avoil flicking
+                controlToFocus.Focus();
+            }
+
             switch (language)
             {
                 case "NormalText":
@@ -2060,7 +2072,8 @@ namespace MyTextBox
             }
             string nestedText;
             int tempInt;
-            for(int i = 0; i < nestedList.Count; i++)
+            nestedList = FoldFinder.Instance.FindFirst(this.Text, regexList);
+            for (int i = 0; i < nestedList.Count; i++)
             {
                 SectionPosition section = nestedList[i];
                 Select(section.Start + 1, section.End - section.Start - 2);
@@ -2068,8 +2081,8 @@ namespace MyTextBox
                 // check if the code is folded
                 if (!nestedText.StartsWith("folded"))
                 {
+                    nestedList = FoldFinder.Instance.FindFirst(this.Text, regexList, section.Start + 1);
                     NewFolded(nestedText);
-                    nestedList = FoldFinder.Instance.Find(this.Text, regexList);
                     i = 0;
                 }
                 else
@@ -2077,12 +2090,13 @@ namespace MyTextBox
                     if (!int.TryParse(nestedText.Substring(6),out tempInt))
                     {
                         NewFolded(nestedText);
-                        nestedList = FoldFinder.Instance.Find(this.Text, regexList);
+                        nestedList = FoldFinder.Instance.FindFirst(this.Text, regexList, section.Start + 1);
                         i = 0;
                     }
                 }
             }
             blockRecordingUndo = false;
+            this.Focus();
         }
         //Unfold all
         public void UnfoldAll()
@@ -2097,6 +2111,7 @@ namespace MyTextBox
             string nestedText;
             int foldedIndex;
             FoldedState currentFolded;
+            nestedList = FoldFinder.Instance.Find(this.Text, regexList);
             for (int i = 0; i < nestedList.Count; i++)
             {
                 SectionPosition section = nestedList[i];
@@ -2111,8 +2126,9 @@ namespace MyTextBox
                         {
                             currentFolded = foldedList[foldedIndex];
                             SelectedText = currentFolded.Content;
+                            nestedList = FoldFinder.Instance.Find(this.Text, regexList, section.Start + currentFolded.Content.Length);
                             foldedList.Remove(foldedIndex);
-                            nestedList = FoldFinder.Instance.Find(this.Text, regexList);
+                            
                             i = 0;
                         }
                         catch { }
@@ -2384,6 +2400,28 @@ namespace MyTextBox
 
         #endregion
 
+        #region Get Line For Lazy
+        private int GetLineFromMouseClick(Point pt)
+        {
+            int charIndex = GetCharIndexFromPosition(pt);
+            int lineIndex = GetLineFromCharIndex(charIndex);
+            return lineIndex;
+        }
+
+        private int GetFirstVisiableLine()
+        {
+            int topIndex = GetCharIndexFromPosition(new Point(0, 0));
+            int topLine = GetLineFromCharIndex(topIndex);
+            return topLine;
+        }
+
+        public int GetLastVisiableLine()
+        {
+            int topIndex = GetCharIndexFromPosition(new Point(Width, Height));
+            int topLine = GetLineFromCharIndex(topIndex);
+            return topLine;
+        }
+        #endregion
     }
     
     
