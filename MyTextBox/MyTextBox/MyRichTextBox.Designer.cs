@@ -37,7 +37,7 @@
             // textArea
             // 
             this.textArea.AcceptsTab = true;
-            //this.textArea.BasePositionToCheckHighLight = 0;
+            this.textArea.BlockAllAction = false;
             this.textArea.BookMarkMargin = this.bookMarkMargin;
             this.textArea.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textArea.CommentBlocksColor = System.Drawing.Color.DarkGreen;
@@ -53,11 +53,11 @@
             this.textArea.Language = "NormalText";
             this.textArea.LastVisibleCharIndex = 0;
             this.textArea.LastVisibleLine = 0;
-            this.textArea.Location = new System.Drawing.Point(51, 0);
+            this.textArea.Location = new System.Drawing.Point(70, 0);
             this.textArea.Name = "textArea";
             this.textArea.NumberMargin = this.numberMargin;
             this.textArea.PreprocessorsColor = System.Drawing.Color.Gray;
-            this.textArea.Size = new System.Drawing.Size(553, 511);
+            this.textArea.Size = new System.Drawing.Size(534, 511);
             this.textArea.StringsColor = System.Drawing.Color.Brown;
             this.textArea.TabIndex = 4;
             this.textArea.TabSize = 4;
@@ -70,7 +70,7 @@
             this.bookMarkMargin.BookMarkFont = new System.Drawing.Font("Webdings", 10F);
             this.bookMarkMargin.Dock = System.Windows.Forms.DockStyle.Left;
             this.bookMarkMargin.IsNeededAutoBookMark = false;
-            this.bookMarkMargin.Location = new System.Drawing.Point(25, 0);
+            this.bookMarkMargin.Location = new System.Drawing.Point(44, 0);
             this.bookMarkMargin.Name = "bookMarkMargin";
             this.bookMarkMargin.ParentTextArea = this.textArea;
             this.bookMarkMargin.Size = new System.Drawing.Size(26, 511);
@@ -87,7 +87,7 @@
             this.numberMargin.Name = "numberMargin";
             this.numberMargin.NumberFont = new System.Drawing.Font("Arial", 10F);
             this.numberMargin.ParentTextArea = this.textArea;
-            this.numberMargin.Size = new System.Drawing.Size(25, 511);
+            this.numberMargin.Size = new System.Drawing.Size(44, 511);
             this.numberMargin.TabIndex = 5;
             this.numberMargin.Text = "numberMargin1";
             this.numberMargin.WidthPadding = 4;

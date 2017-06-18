@@ -1554,8 +1554,8 @@ namespace MyTextBox
                                     {
                                         case '{':
                                             {
-                                                this.SelectedText = " }";                                              
-                                                currentUndoAction.ReverseText += " }";                                             
+                                                this.SelectedText = " }";
+                                                currentUndoAction.ReverseText += " }";
                                                 break;
                                             }
                                         case '(':
@@ -1567,7 +1567,7 @@ namespace MyTextBox
                                         case '[':
                                             {
                                                 this.SelectedText = " ]";
-                                                currentUndoAction.ReverseText  += " ]";
+                                                currentUndoAction.ReverseText += " ]";
                                                 break;
                                             }
                                         case '<':
@@ -1590,6 +1590,9 @@ namespace MyTextBox
                                 if (currentUndoAction.ActionName == "DeEnter")
                                 {
                                     int previousLineNumber = this.GetLineFromCharIndex(this.SelectionStart) - 1;
+
+                                    if (previousLineNumber < 0 || previousLineNumber > this.Lines.Count()) return;
+
                                     //get previous line
                                     string previousLine = this.Lines[previousLineNumber];
 

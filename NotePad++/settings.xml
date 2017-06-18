@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Settings>
   <DefaultSettings>
     <General>
@@ -45,8 +45,8 @@
   </DefaultSettings>
   <UserSettings>
     <General>
-      <Theme>Custom</Theme>
-      <BackColor>-1</BackColor>
+      <Theme>Dark</Theme>
+      <BackColor>-12044473</BackColor>
       <ShowStatusBar>True</ShowStatusBar>
       <HideTaskBar>False</HideTaskBar>
       <New>true</New>
