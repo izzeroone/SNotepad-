@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -82,6 +82,9 @@ namespace NotePad__
             bookmarkMarginBackColorButton.BackColor = StylesClass.BookmarkMarginBackColor;
             bookmarkMarginForeColorButton.BackColor = StylesClass.BookmarkMarginForeColor;
 
+
+
+            //event
             defaultThemeRadioButton.CheckedChanged += themeRadioButton_CheckedChanged;
             darkThemeRadioButton.CheckedChanged += themeRadioButton_CheckedChanged;
             customThemeRadioButton.CheckedChanged += themeRadioButton_CheckedChanged;
@@ -497,6 +500,14 @@ namespace NotePad__
         {
             this.Visible = false;
             e.Cancel = true;
+        }
+
+        private void setDefaultButton_Click(object sender, EventArgs e)
+        {
+            StylesClass.SaveAsDefaultStyles();
+            
+            MessageBox.Show("Close the program to apply the setting","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
         }
     }
 }

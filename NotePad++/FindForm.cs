@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -208,14 +208,6 @@ namespace NotePad__
 
         }
 
-        private void FindForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            TextArea currentTextArea = TabControlClass.CurrentTextArea;
-
-            ////Remove highlighted text of previous search        
-            currentTextArea.ClearBackColor(currentTextArea.BackColor);
-        }
-
         private void FindForm_Deactivate(object sender, EventArgs e)
         {
             try
@@ -270,5 +262,16 @@ namespace NotePad__
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
+        private void FindForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (TabPage tabPage in TabControlClass.TabControl.TabPages)
+            {
+                TextArea textArea = (tabPage.Controls[0] as MyRichTextBox).TextArea;
+                textArea.ClearBackColor(textArea.BackColor);
+            }
+       
+            this.Visible = false;
+            e.Cancel = true;
+        }
     }
 }

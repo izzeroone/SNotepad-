@@ -1,4 +1,4 @@
-﻿namespace NotePad__
+namespace NotePad__
 {
     partial class PreferencesForm
     {
@@ -84,6 +84,7 @@
             this.numberMarginForeColorButton = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.numberMarginBackColorButton = new System.Windows.Forms.Button();
+            this.setDefaultButton = new System.Windows.Forms.Button();
             this.generalPanel.SuspendLayout();
             this.taskBarGroupBox.SuspendLayout();
             this.themeGroupBox.SuspendLayout();
@@ -735,11 +736,22 @@
             this.numberMarginBackColorButton.UseVisualStyleBackColor = false;
             this.numberMarginBackColorButton.Click += new System.EventHandler(this.numberMarginBackColorButton_Click);
             // 
+            // setDefaultButton
+            // 
+            this.setDefaultButton.Location = new System.Drawing.Point(338, 291);
+            this.setDefaultButton.Name = "setDefaultButton";
+            this.setDefaultButton.Size = new System.Drawing.Size(95, 23);
+            this.setDefaultButton.TabIndex = 5;
+            this.setDefaultButton.Text = "Set As Default";
+            this.setDefaultButton.UseVisualStyleBackColor = true;
+            this.setDefaultButton.Click += new System.EventHandler(this.setDefaultButton_Click);
+            // 
             // PreferencesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 326);
+            this.Controls.Add(this.setDefaultButton);
             this.Controls.Add(this.othersPanel);
             this.Controls.Add(this.languagePanel);
             this.Controls.Add(this.closeButton);
@@ -828,5 +840,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button bookmarkMarginForeColorButton;
         private System.Windows.Forms.RadioButton customThemeRadioButton;
+        private System.Windows.Forms.Button setDefaultButton;
     }
 }

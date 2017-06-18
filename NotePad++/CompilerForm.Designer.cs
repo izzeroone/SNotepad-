@@ -1,4 +1,4 @@
-﻿namespace NotePad__
+namespace NotePad__
 {
     partial class CompilerForm
     {
@@ -113,6 +113,7 @@
             this.MinimizeBox = false;
             this.Name = "CompilerForm";
             this.Text = "ComplilerForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CompilerForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
