@@ -1,4 +1,4 @@
-﻿namespace NotePad__
+namespace NotePad__
 {
     partial class FindForm
     {
@@ -158,7 +158,7 @@
             this.TopMost = true;
             this.Activated += new System.EventHandler(this.FindForm_Activated);
             this.Deactivate += new System.EventHandler(this.FindForm_Deactivate);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindForm_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FindForm_FormClosing);        
             this.ResumeLayout(false);
             this.PerformLayout();
 
