@@ -143,6 +143,16 @@ namespace NotePad__.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dtafalonso_Android_Lollipop_Settings {
+            get {
+                object obj = ResourceManager.GetObject("Dtafalonso-Android-Lollipop-Settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap find_dc2 {
             get {
                 object obj = ResourceManager.GetObject("find_dc2", resourceCulture);
