@@ -28,6 +28,7 @@ namespace NotePad__
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
             this.menuListBox = new System.Windows.Forms.ListBox();
             this.generalPanel = new System.Windows.Forms.Panel();
             this.showStatusBarCheckBox = new System.Windows.Forms.CheckBox();
@@ -98,13 +99,15 @@ namespace NotePad__
             // 
             this.menuListBox.BackColor = System.Drawing.SystemColors.Control;
             this.menuListBox.FormattingEnabled = true;
+            this.menuListBox.ItemHeight = 16;
             this.menuListBox.Items.AddRange(new object[] {
             "General",
             "Language",
             "Others"});
-            this.menuListBox.Location = new System.Drawing.Point(25, 30);
+            this.menuListBox.Location = new System.Drawing.Point(33, 37);
+            this.menuListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.menuListBox.Name = "menuListBox";
-            this.menuListBox.Size = new System.Drawing.Size(96, 225);
+            this.menuListBox.Size = new System.Drawing.Size(127, 276);
             this.menuListBox.TabIndex = 0;
             this.menuListBox.SelectedIndexChanged += new System.EventHandler(this.menuListBox_SelectedIndexChanged);
             // 
@@ -114,9 +117,10 @@ namespace NotePad__
             this.generalPanel.Controls.Add(this.hideTaskBarCheckBox);
             this.generalPanel.Controls.Add(this.taskBarGroupBox);
             this.generalPanel.Controls.Add(this.themeGroupBox);
-            this.generalPanel.Location = new System.Drawing.Point(175, 30);
+            this.generalPanel.Location = new System.Drawing.Point(233, 37);
+            this.generalPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.generalPanel.Name = "generalPanel";
-            this.generalPanel.Size = new System.Drawing.Size(411, 225);
+            this.generalPanel.Size = new System.Drawing.Size(548, 277);
             this.generalPanel.TabIndex = 1;
             this.generalPanel.Visible = false;
             // 
@@ -125,9 +129,10 @@ namespace NotePad__
             this.showStatusBarCheckBox.AutoSize = true;
             this.showStatusBarCheckBox.Checked = true;
             this.showStatusBarCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.showStatusBarCheckBox.Location = new System.Drawing.Point(3, 205);
+            this.showStatusBarCheckBox.Location = new System.Drawing.Point(4, 252);
+            this.showStatusBarCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.showStatusBarCheckBox.Name = "showStatusBarCheckBox";
-            this.showStatusBarCheckBox.Size = new System.Drawing.Size(102, 17);
+            this.showStatusBarCheckBox.Size = new System.Drawing.Size(131, 21);
             this.showStatusBarCheckBox.TabIndex = 3;
             this.showStatusBarCheckBox.Text = "Show status bar";
             this.showStatusBarCheckBox.UseVisualStyleBackColor = true;
@@ -136,9 +141,10 @@ namespace NotePad__
             // hideTaskBarCheckBox
             // 
             this.hideTaskBarCheckBox.AutoSize = true;
-            this.hideTaskBarCheckBox.Location = new System.Drawing.Point(191, 205);
+            this.hideTaskBarCheckBox.Location = new System.Drawing.Point(255, 252);
+            this.hideTaskBarCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.hideTaskBarCheckBox.Name = "hideTaskBarCheckBox";
-            this.hideTaskBarCheckBox.Size = new System.Drawing.Size(89, 17);
+            this.hideTaskBarCheckBox.Size = new System.Drawing.Size(114, 21);
             this.hideTaskBarCheckBox.TabIndex = 2;
             this.hideTaskBarCheckBox.Text = "Hide task bar";
             this.hideTaskBarCheckBox.UseVisualStyleBackColor = true;
@@ -161,9 +167,11 @@ namespace NotePad__
             this.taskBarGroupBox.Controls.Add(this.saveCheckBox);
             this.taskBarGroupBox.Controls.Add(this.openCheckBox);
             this.taskBarGroupBox.Controls.Add(this.newCheckBox);
-            this.taskBarGroupBox.Location = new System.Drawing.Point(191, 3);
+            this.taskBarGroupBox.Location = new System.Drawing.Point(255, 4);
+            this.taskBarGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.taskBarGroupBox.Name = "taskBarGroupBox";
-            this.taskBarGroupBox.Size = new System.Drawing.Size(207, 196);
+            this.taskBarGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.taskBarGroupBox.Size = new System.Drawing.Size(276, 241);
             this.taskBarGroupBox.TabIndex = 1;
             this.taskBarGroupBox.TabStop = false;
             this.taskBarGroupBox.Text = "Task Bar";
@@ -173,9 +181,10 @@ namespace NotePad__
             this.fontCheckBox.AutoSize = true;
             this.fontCheckBox.Checked = true;
             this.fontCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.fontCheckBox.Location = new System.Drawing.Point(127, 86);
+            this.fontCheckBox.Location = new System.Drawing.Point(169, 106);
+            this.fontCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fontCheckBox.Name = "fontCheckBox";
-            this.fontCheckBox.Size = new System.Drawing.Size(47, 17);
+            this.fontCheckBox.Size = new System.Drawing.Size(58, 21);
             this.fontCheckBox.TabIndex = 18;
             this.fontCheckBox.Text = "Font";
             this.fontCheckBox.UseVisualStyleBackColor = true;
@@ -187,9 +196,10 @@ namespace NotePad__
             this.underlineCheckBox.AutoSize = true;
             this.underlineCheckBox.Checked = true;
             this.underlineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.underlineCheckBox.Location = new System.Drawing.Point(126, 153);
+            this.underlineCheckBox.Location = new System.Drawing.Point(168, 188);
+            this.underlineCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.underlineCheckBox.Name = "underlineCheckBox";
-            this.underlineCheckBox.Size = new System.Drawing.Size(71, 17);
+            this.underlineCheckBox.Size = new System.Drawing.Size(91, 21);
             this.underlineCheckBox.TabIndex = 17;
             this.underlineCheckBox.Text = "Underline";
             this.underlineCheckBox.UseVisualStyleBackColor = true;
@@ -201,9 +211,10 @@ namespace NotePad__
             this.upperCheckBox.AutoSize = true;
             this.upperCheckBox.Checked = true;
             this.upperCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.upperCheckBox.Location = new System.Drawing.Point(15, 153);
+            this.upperCheckBox.Location = new System.Drawing.Point(20, 188);
+            this.upperCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.upperCheckBox.Name = "upperCheckBox";
-            this.upperCheckBox.Size = new System.Drawing.Size(71, 17);
+            this.upperCheckBox.Size = new System.Drawing.Size(90, 21);
             this.upperCheckBox.TabIndex = 14;
             this.upperCheckBox.Text = "To Upper";
             this.upperCheckBox.UseVisualStyleBackColor = true;
@@ -214,9 +225,10 @@ namespace NotePad__
             this.versionsCheckBox.AutoSize = true;
             this.versionsCheckBox.Checked = true;
             this.versionsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.versionsCheckBox.Location = new System.Drawing.Point(15, 174);
+            this.versionsCheckBox.Location = new System.Drawing.Point(20, 214);
+            this.versionsCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.versionsCheckBox.Name = "versionsCheckBox";
-            this.versionsCheckBox.Size = new System.Drawing.Size(66, 17);
+            this.versionsCheckBox.Size = new System.Drawing.Size(85, 21);
             this.versionsCheckBox.TabIndex = 13;
             this.versionsCheckBox.Text = "Versions";
             this.versionsCheckBox.UseVisualStyleBackColor = true;
@@ -227,9 +239,10 @@ namespace NotePad__
             this.italicCheckBox.AutoSize = true;
             this.italicCheckBox.Checked = true;
             this.italicCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.italicCheckBox.Location = new System.Drawing.Point(126, 131);
+            this.italicCheckBox.Location = new System.Drawing.Point(168, 161);
+            this.italicCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.italicCheckBox.Name = "italicCheckBox";
-            this.italicCheckBox.Size = new System.Drawing.Size(48, 17);
+            this.italicCheckBox.Size = new System.Drawing.Size(58, 21);
             this.italicCheckBox.TabIndex = 16;
             this.italicCheckBox.Text = "Italic";
             this.italicCheckBox.UseVisualStyleBackColor = true;
@@ -241,9 +254,10 @@ namespace NotePad__
             this.boldCheckBox.AutoSize = true;
             this.boldCheckBox.Checked = true;
             this.boldCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.boldCheckBox.Location = new System.Drawing.Point(126, 109);
+            this.boldCheckBox.Location = new System.Drawing.Point(168, 134);
+            this.boldCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.boldCheckBox.Name = "boldCheckBox";
-            this.boldCheckBox.Size = new System.Drawing.Size(47, 17);
+            this.boldCheckBox.Size = new System.Drawing.Size(58, 21);
             this.boldCheckBox.TabIndex = 15;
             this.boldCheckBox.Text = "Bold";
             this.boldCheckBox.UseVisualStyleBackColor = true;
@@ -255,9 +269,10 @@ namespace NotePad__
             this.documentMapCheckBox.AutoSize = true;
             this.documentMapCheckBox.Checked = true;
             this.documentMapCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.documentMapCheckBox.Location = new System.Drawing.Point(15, 84);
+            this.documentMapCheckBox.Location = new System.Drawing.Point(20, 103);
+            this.documentMapCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.documentMapCheckBox.Name = "documentMapCheckBox";
-            this.documentMapCheckBox.Size = new System.Drawing.Size(98, 17);
+            this.documentMapCheckBox.Size = new System.Drawing.Size(125, 21);
             this.documentMapCheckBox.TabIndex = 12;
             this.documentMapCheckBox.Text = "Document map";
             this.documentMapCheckBox.UseVisualStyleBackColor = true;
@@ -268,9 +283,10 @@ namespace NotePad__
             this.findAndReplaceCheckBox.AutoSize = true;
             this.findAndReplaceCheckBox.Checked = true;
             this.findAndReplaceCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.findAndReplaceCheckBox.Location = new System.Drawing.Point(15, 131);
+            this.findAndReplaceCheckBox.Location = new System.Drawing.Point(20, 161);
+            this.findAndReplaceCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.findAndReplaceCheckBox.Name = "findAndReplaceCheckBox";
-            this.findAndReplaceCheckBox.Size = new System.Drawing.Size(110, 17);
+            this.findAndReplaceCheckBox.Size = new System.Drawing.Size(141, 21);
             this.findAndReplaceCheckBox.TabIndex = 11;
             this.findAndReplaceCheckBox.Text = "Find and Replace";
             this.findAndReplaceCheckBox.UseVisualStyleBackColor = true;
@@ -281,9 +297,10 @@ namespace NotePad__
             this.pasteCheckBox.AutoSize = true;
             this.pasteCheckBox.Checked = true;
             this.pasteCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.pasteCheckBox.Location = new System.Drawing.Point(127, 63);
+            this.pasteCheckBox.Location = new System.Drawing.Point(169, 78);
+            this.pasteCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pasteCheckBox.Name = "pasteCheckBox";
-            this.pasteCheckBox.Size = new System.Drawing.Size(53, 17);
+            this.pasteCheckBox.Size = new System.Drawing.Size(66, 21);
             this.pasteCheckBox.TabIndex = 10;
             this.pasteCheckBox.Text = "Paste";
             this.pasteCheckBox.UseVisualStyleBackColor = true;
@@ -294,9 +311,10 @@ namespace NotePad__
             this.cutCheckBox.AutoSize = true;
             this.cutCheckBox.Checked = true;
             this.cutCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cutCheckBox.Location = new System.Drawing.Point(127, 39);
+            this.cutCheckBox.Location = new System.Drawing.Point(169, 48);
+            this.cutCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cutCheckBox.Name = "cutCheckBox";
-            this.cutCheckBox.Size = new System.Drawing.Size(42, 17);
+            this.cutCheckBox.Size = new System.Drawing.Size(51, 21);
             this.cutCheckBox.TabIndex = 9;
             this.cutCheckBox.Text = "Cut";
             this.cutCheckBox.UseVisualStyleBackColor = true;
@@ -307,9 +325,10 @@ namespace NotePad__
             this.copyCheckBox.AutoSize = true;
             this.copyCheckBox.Checked = true;
             this.copyCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.copyCheckBox.Location = new System.Drawing.Point(127, 17);
+            this.copyCheckBox.Location = new System.Drawing.Point(169, 21);
+            this.copyCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.copyCheckBox.Name = "copyCheckBox";
-            this.copyCheckBox.Size = new System.Drawing.Size(50, 17);
+            this.copyCheckBox.Size = new System.Drawing.Size(62, 21);
             this.copyCheckBox.TabIndex = 8;
             this.copyCheckBox.Text = "Copy";
             this.copyCheckBox.UseVisualStyleBackColor = true;
@@ -320,9 +339,10 @@ namespace NotePad__
             this.findCheckBox.AutoSize = true;
             this.findCheckBox.Checked = true;
             this.findCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.findCheckBox.Location = new System.Drawing.Point(15, 107);
+            this.findCheckBox.Location = new System.Drawing.Point(20, 132);
+            this.findCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.findCheckBox.Name = "findCheckBox";
-            this.findCheckBox.Size = new System.Drawing.Size(46, 17);
+            this.findCheckBox.Size = new System.Drawing.Size(57, 21);
             this.findCheckBox.TabIndex = 7;
             this.findCheckBox.Text = "Find";
             this.findCheckBox.UseVisualStyleBackColor = true;
@@ -333,9 +353,10 @@ namespace NotePad__
             this.saveCheckBox.AutoSize = true;
             this.saveCheckBox.Checked = true;
             this.saveCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.saveCheckBox.Location = new System.Drawing.Point(15, 61);
+            this.saveCheckBox.Location = new System.Drawing.Point(20, 75);
+            this.saveCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveCheckBox.Name = "saveCheckBox";
-            this.saveCheckBox.Size = new System.Drawing.Size(51, 17);
+            this.saveCheckBox.Size = new System.Drawing.Size(62, 21);
             this.saveCheckBox.TabIndex = 6;
             this.saveCheckBox.Text = "Save";
             this.saveCheckBox.UseVisualStyleBackColor = true;
@@ -346,9 +367,10 @@ namespace NotePad__
             this.openCheckBox.AutoSize = true;
             this.openCheckBox.Checked = true;
             this.openCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.openCheckBox.Location = new System.Drawing.Point(15, 39);
+            this.openCheckBox.Location = new System.Drawing.Point(20, 48);
+            this.openCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.openCheckBox.Name = "openCheckBox";
-            this.openCheckBox.Size = new System.Drawing.Size(52, 17);
+            this.openCheckBox.Size = new System.Drawing.Size(65, 21);
             this.openCheckBox.TabIndex = 5;
             this.openCheckBox.Text = "Open";
             this.openCheckBox.UseVisualStyleBackColor = true;
@@ -359,9 +381,10 @@ namespace NotePad__
             this.newCheckBox.AutoSize = true;
             this.newCheckBox.Checked = true;
             this.newCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.newCheckBox.Location = new System.Drawing.Point(15, 16);
+            this.newCheckBox.Location = new System.Drawing.Point(20, 20);
+            this.newCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.newCheckBox.Name = "newCheckBox";
-            this.newCheckBox.Size = new System.Drawing.Size(48, 17);
+            this.newCheckBox.Size = new System.Drawing.Size(57, 21);
             this.newCheckBox.TabIndex = 4;
             this.newCheckBox.Text = "New";
             this.newCheckBox.UseVisualStyleBackColor = true;
@@ -374,9 +397,11 @@ namespace NotePad__
             this.themeGroupBox.Controls.Add(this.defaultThemeRadioButton);
             this.themeGroupBox.Controls.Add(this.label1);
             this.themeGroupBox.Controls.Add(this.backColorButton);
-            this.themeGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.themeGroupBox.Location = new System.Drawing.Point(4, 4);
+            this.themeGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.themeGroupBox.Name = "themeGroupBox";
-            this.themeGroupBox.Size = new System.Drawing.Size(170, 196);
+            this.themeGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.themeGroupBox.Size = new System.Drawing.Size(227, 241);
             this.themeGroupBox.TabIndex = 0;
             this.themeGroupBox.TabStop = false;
             this.themeGroupBox.Text = "Theme";
@@ -384,9 +409,10 @@ namespace NotePad__
             // customThemeRadioButton
             // 
             this.customThemeRadioButton.AutoSize = true;
-            this.customThemeRadioButton.Location = new System.Drawing.Point(17, 86);
+            this.customThemeRadioButton.Location = new System.Drawing.Point(23, 106);
+            this.customThemeRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.customThemeRadioButton.Name = "customThemeRadioButton";
-            this.customThemeRadioButton.Size = new System.Drawing.Size(96, 17);
+            this.customThemeRadioButton.Size = new System.Drawing.Size(124, 21);
             this.customThemeRadioButton.TabIndex = 6;
             this.customThemeRadioButton.Text = "Custom Theme";
             this.customThemeRadioButton.UseVisualStyleBackColor = true;
@@ -394,9 +420,10 @@ namespace NotePad__
             // darkThemeRadioButton
             // 
             this.darkThemeRadioButton.AutoSize = true;
-            this.darkThemeRadioButton.Location = new System.Drawing.Point(17, 43);
+            this.darkThemeRadioButton.Location = new System.Drawing.Point(23, 53);
+            this.darkThemeRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.darkThemeRadioButton.Name = "darkThemeRadioButton";
-            this.darkThemeRadioButton.Size = new System.Drawing.Size(84, 17);
+            this.darkThemeRadioButton.Size = new System.Drawing.Size(107, 21);
             this.darkThemeRadioButton.TabIndex = 5;
             this.darkThemeRadioButton.Text = "Dark Theme";
             this.darkThemeRadioButton.UseVisualStyleBackColor = true;
@@ -405,9 +432,10 @@ namespace NotePad__
             // 
             this.defaultThemeRadioButton.AutoSize = true;
             this.defaultThemeRadioButton.Checked = true;
-            this.defaultThemeRadioButton.Location = new System.Drawing.Point(17, 20);
+            this.defaultThemeRadioButton.Location = new System.Drawing.Point(23, 25);
+            this.defaultThemeRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.defaultThemeRadioButton.Name = "defaultThemeRadioButton";
-            this.defaultThemeRadioButton.Size = new System.Drawing.Size(95, 17);
+            this.defaultThemeRadioButton.Size = new System.Drawing.Size(122, 21);
             this.defaultThemeRadioButton.TabIndex = 4;
             this.defaultThemeRadioButton.TabStop = true;
             this.defaultThemeRadioButton.Text = "Default Theme";
@@ -416,27 +444,30 @@ namespace NotePad__
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 115);
+            this.label1.Location = new System.Drawing.Point(19, 142);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.Size = new System.Drawing.Size(121, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Background Color";
             // 
             // backColorButton
             // 
             this.backColorButton.BackColor = System.Drawing.Color.White;
-            this.backColorButton.Location = new System.Drawing.Point(112, 110);
+            this.backColorButton.Location = new System.Drawing.Point(149, 135);
+            this.backColorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backColorButton.Name = "backColorButton";
-            this.backColorButton.Size = new System.Drawing.Size(41, 23);
+            this.backColorButton.Size = new System.Drawing.Size(55, 28);
             this.backColorButton.TabIndex = 0;
             this.backColorButton.UseVisualStyleBackColor = false;
             this.backColorButton.Click += new System.EventHandler(this.backColorDialogButton_Click);
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(257, 291);
+            this.closeButton.Location = new System.Drawing.Point(343, 358);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(75, 23);
+            this.closeButton.Size = new System.Drawing.Size(100, 28);
             this.closeButton.TabIndex = 2;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
@@ -445,9 +476,10 @@ namespace NotePad__
             // languagePanel
             // 
             this.languagePanel.Controls.Add(this.groupBox2);
-            this.languagePanel.Location = new System.Drawing.Point(606, 30);
+            this.languagePanel.Location = new System.Drawing.Point(808, 37);
+            this.languagePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.languagePanel.Name = "languagePanel";
-            this.languagePanel.Size = new System.Drawing.Size(233, 225);
+            this.languagePanel.Size = new System.Drawing.Size(311, 277);
             this.languagePanel.TabIndex = 3;
             this.languagePanel.Visible = false;
             // 
@@ -465,9 +497,11 @@ namespace NotePad__
             this.groupBox2.Controls.Add(this.commentLinesColorButton);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.stringsColorButton);
-            this.groupBox2.Location = new System.Drawing.Point(13, 3);
+            this.groupBox2.Location = new System.Drawing.Point(17, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(205, 196);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(273, 241);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Laguage";
@@ -475,9 +509,10 @@ namespace NotePad__
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 163);
+            this.label8.Location = new System.Drawing.Point(8, 201);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 13);
+            this.label8.Size = new System.Drawing.Size(121, 17);
             this.label8.TabIndex = 11;
             this.label8.Text = "Default Language";
             // 
@@ -490,9 +525,10 @@ namespace NotePad__
             "C++",
             "C#",
             "VB"});
-            this.defaultLaguageComboBox.Location = new System.Drawing.Point(122, 160);
+            this.defaultLaguageComboBox.Location = new System.Drawing.Point(163, 197);
+            this.defaultLaguageComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.defaultLaguageComboBox.Name = "defaultLaguageComboBox";
-            this.defaultLaguageComboBox.Size = new System.Drawing.Size(77, 21);
+            this.defaultLaguageComboBox.Size = new System.Drawing.Size(101, 24);
             this.defaultLaguageComboBox.TabIndex = 10;
             this.defaultLaguageComboBox.Text = "NormalText";
             this.defaultLaguageComboBox.SelectedIndexChanged += new System.EventHandler(this.defaultLaguageComboBox_SelectedIndexChanged);
@@ -500,18 +536,20 @@ namespace NotePad__
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 135);
+            this.label7.Location = new System.Drawing.Point(8, 166);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 13);
+            this.label7.Size = new System.Drawing.Size(149, 17);
             this.label7.TabIndex = 9;
             this.label7.Text = "Comment Blocks Color";
             // 
             // commentBlocksColorButton
             // 
             this.commentBlocksColorButton.BackColor = System.Drawing.Color.DarkGreen;
-            this.commentBlocksColorButton.Location = new System.Drawing.Point(122, 131);
+            this.commentBlocksColorButton.Location = new System.Drawing.Point(163, 161);
+            this.commentBlocksColorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.commentBlocksColorButton.Name = "commentBlocksColorButton";
-            this.commentBlocksColorButton.Size = new System.Drawing.Size(41, 23);
+            this.commentBlocksColorButton.Size = new System.Drawing.Size(55, 28);
             this.commentBlocksColorButton.TabIndex = 8;
             this.commentBlocksColorButton.UseVisualStyleBackColor = false;
             this.commentBlocksColorButton.Click += new System.EventHandler(this.commentBlocksColorButton_Click);
@@ -519,18 +557,20 @@ namespace NotePad__
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 49);
+            this.label5.Location = new System.Drawing.Point(8, 60);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.Size = new System.Drawing.Size(106, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "Keywords Color";
             // 
             // keywordsColorButton
             // 
             this.keywordsColorButton.BackColor = System.Drawing.Color.Blue;
-            this.keywordsColorButton.Location = new System.Drawing.Point(122, 44);
+            this.keywordsColorButton.Location = new System.Drawing.Point(163, 54);
+            this.keywordsColorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.keywordsColorButton.Name = "keywordsColorButton";
-            this.keywordsColorButton.Size = new System.Drawing.Size(41, 23);
+            this.keywordsColorButton.Size = new System.Drawing.Size(55, 28);
             this.keywordsColorButton.TabIndex = 6;
             this.keywordsColorButton.UseVisualStyleBackColor = false;
             this.keywordsColorButton.Click += new System.EventHandler(this.keywordColorButton_Click);
@@ -538,18 +578,20 @@ namespace NotePad__
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 20);
+            this.label6.Location = new System.Drawing.Point(8, 25);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.Size = new System.Drawing.Size(90, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "Default Color";
             // 
             // defaultLanguageColorButton
             // 
             this.defaultLanguageColorButton.BackColor = System.Drawing.Color.Black;
-            this.defaultLanguageColorButton.Location = new System.Drawing.Point(122, 15);
+            this.defaultLanguageColorButton.Location = new System.Drawing.Point(163, 18);
+            this.defaultLanguageColorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.defaultLanguageColorButton.Name = "defaultLanguageColorButton";
-            this.defaultLanguageColorButton.Size = new System.Drawing.Size(41, 23);
+            this.defaultLanguageColorButton.Size = new System.Drawing.Size(55, 28);
             this.defaultLanguageColorButton.TabIndex = 4;
             this.defaultLanguageColorButton.UseVisualStyleBackColor = false;
             this.defaultLanguageColorButton.Click += new System.EventHandler(this.defaultColorButton_Click);
@@ -557,18 +599,20 @@ namespace NotePad__
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 106);
+            this.label3.Location = new System.Drawing.Point(8, 130);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 13);
+            this.label3.Size = new System.Drawing.Size(142, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Comment Lines Color";
             // 
             // commentLinesColorButton
             // 
             this.commentLinesColorButton.BackColor = System.Drawing.Color.Green;
-            this.commentLinesColorButton.Location = new System.Drawing.Point(122, 101);
+            this.commentLinesColorButton.Location = new System.Drawing.Point(163, 124);
+            this.commentLinesColorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.commentLinesColorButton.Name = "commentLinesColorButton";
-            this.commentLinesColorButton.Size = new System.Drawing.Size(41, 23);
+            this.commentLinesColorButton.Size = new System.Drawing.Size(55, 28);
             this.commentLinesColorButton.TabIndex = 2;
             this.commentLinesColorButton.UseVisualStyleBackColor = false;
             this.commentLinesColorButton.Click += new System.EventHandler(this.commentLinesColorButton_Click);
@@ -576,18 +620,20 @@ namespace NotePad__
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 79);
+            this.label4.Location = new System.Drawing.Point(8, 97);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.Size = new System.Drawing.Size(89, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Strings Color";
             // 
             // stringsColorButton
             // 
             this.stringsColorButton.BackColor = System.Drawing.Color.Brown;
-            this.stringsColorButton.Location = new System.Drawing.Point(122, 72);
+            this.stringsColorButton.Location = new System.Drawing.Point(163, 89);
+            this.stringsColorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stringsColorButton.Name = "stringsColorButton";
-            this.stringsColorButton.Size = new System.Drawing.Size(41, 23);
+            this.stringsColorButton.Size = new System.Drawing.Size(55, 28);
             this.stringsColorButton.TabIndex = 0;
             this.stringsColorButton.UseVisualStyleBackColor = false;
             this.stringsColorButton.Click += new System.EventHandler(this.stringsColorButton_Click);
@@ -595,9 +641,10 @@ namespace NotePad__
             // othersPanel
             // 
             this.othersPanel.Controls.Add(this.groupBox1);
-            this.othersPanel.Location = new System.Drawing.Point(845, 30);
+            this.othersPanel.Location = new System.Drawing.Point(1127, 37);
+            this.othersPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.othersPanel.Name = "othersPanel";
-            this.othersPanel.Size = new System.Drawing.Size(274, 225);
+            this.othersPanel.Size = new System.Drawing.Size(365, 277);
             this.othersPanel.TabIndex = 4;
             this.othersPanel.Visible = false;
             // 
@@ -615,9 +662,11 @@ namespace NotePad__
             this.groupBox1.Controls.Add(this.numberMarginForeColorButton);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.numberMarginBackColorButton);
-            this.groupBox1.Location = new System.Drawing.Point(13, 3);
+            this.groupBox1.Location = new System.Drawing.Point(17, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(244, 196);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(325, 241);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Others";
@@ -625,18 +674,20 @@ namespace NotePad__
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 163);
+            this.label15.Location = new System.Drawing.Point(8, 201);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(169, 13);
+            this.label15.Size = new System.Drawing.Size(227, 17);
             this.label15.TabIndex = 11;
             this.label15.Text = "Bookmark margin foreground color";
             // 
             // bookmarkMarginForeColorButton
             // 
             this.bookmarkMarginForeColorButton.BackColor = System.Drawing.Color.Red;
-            this.bookmarkMarginForeColorButton.Location = new System.Drawing.Point(188, 157);
+            this.bookmarkMarginForeColorButton.Location = new System.Drawing.Point(251, 193);
+            this.bookmarkMarginForeColorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bookmarkMarginForeColorButton.Name = "bookmarkMarginForeColorButton";
-            this.bookmarkMarginForeColorButton.Size = new System.Drawing.Size(41, 23);
+            this.bookmarkMarginForeColorButton.Size = new System.Drawing.Size(55, 28);
             this.bookmarkMarginForeColorButton.TabIndex = 10;
             this.bookmarkMarginForeColorButton.UseVisualStyleBackColor = false;
             this.bookmarkMarginForeColorButton.Click += new System.EventHandler(this.bookmarkMarginForeColorButton_Click);
@@ -644,18 +695,20 @@ namespace NotePad__
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 135);
+            this.label10.Location = new System.Drawing.Point(8, 166);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(175, 13);
+            this.label10.Size = new System.Drawing.Size(232, 17);
             this.label10.TabIndex = 9;
             this.label10.Text = "Bookmark margin background color";
             // 
             // bookmarkMarginBackColorButton
             // 
             this.bookmarkMarginBackColorButton.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.bookmarkMarginBackColorButton.Location = new System.Drawing.Point(188, 130);
+            this.bookmarkMarginBackColorButton.Location = new System.Drawing.Point(251, 160);
+            this.bookmarkMarginBackColorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bookmarkMarginBackColorButton.Name = "bookmarkMarginBackColorButton";
-            this.bookmarkMarginBackColorButton.Size = new System.Drawing.Size(41, 23);
+            this.bookmarkMarginBackColorButton.Size = new System.Drawing.Size(55, 28);
             this.bookmarkMarginBackColorButton.TabIndex = 8;
             this.bookmarkMarginBackColorButton.UseVisualStyleBackColor = false;
             this.bookmarkMarginBackColorButton.Click += new System.EventHandler(this.bookmarkMarginBackColorButton_Click);
@@ -663,18 +716,20 @@ namespace NotePad__
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 49);
+            this.label11.Location = new System.Drawing.Point(8, 60);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(159, 13);
+            this.label11.Size = new System.Drawing.Size(212, 17);
             this.label11.TabIndex = 7;
             this.label11.Text = "Document map foreground color";
             // 
             // documentMapForeColorButton
             // 
             this.documentMapForeColorButton.BackColor = System.Drawing.Color.Black;
-            this.documentMapForeColorButton.Location = new System.Drawing.Point(188, 43);
+            this.documentMapForeColorButton.Location = new System.Drawing.Point(251, 53);
+            this.documentMapForeColorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.documentMapForeColorButton.Name = "documentMapForeColorButton";
-            this.documentMapForeColorButton.Size = new System.Drawing.Size(41, 23);
+            this.documentMapForeColorButton.Size = new System.Drawing.Size(55, 28);
             this.documentMapForeColorButton.TabIndex = 6;
             this.documentMapForeColorButton.UseVisualStyleBackColor = false;
             this.documentMapForeColorButton.Click += new System.EventHandler(this.documentMapForeColorButton_Click);
@@ -682,18 +737,20 @@ namespace NotePad__
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 20);
+            this.label12.Location = new System.Drawing.Point(8, 25);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(165, 13);
+            this.label12.Size = new System.Drawing.Size(217, 17);
             this.label12.TabIndex = 5;
             this.label12.Text = "Document map background color";
             // 
             // documentMapBackColorButton
             // 
             this.documentMapBackColorButton.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.documentMapBackColorButton.Location = new System.Drawing.Point(188, 15);
+            this.documentMapBackColorButton.Location = new System.Drawing.Point(251, 18);
+            this.documentMapBackColorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.documentMapBackColorButton.Name = "documentMapBackColorButton";
-            this.documentMapBackColorButton.Size = new System.Drawing.Size(41, 23);
+            this.documentMapBackColorButton.Size = new System.Drawing.Size(55, 28);
             this.documentMapBackColorButton.TabIndex = 4;
             this.documentMapBackColorButton.UseVisualStyleBackColor = false;
             this.documentMapBackColorButton.Click += new System.EventHandler(this.documentMapBackColorButton_Click);
@@ -701,18 +758,20 @@ namespace NotePad__
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 106);
+            this.label13.Location = new System.Drawing.Point(8, 130);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(158, 13);
+            this.label13.Size = new System.Drawing.Size(214, 17);
             this.label13.TabIndex = 3;
             this.label13.Text = "Number margin foreground color";
             // 
             // numberMarginForeColorButton
             // 
             this.numberMarginForeColorButton.BackColor = System.Drawing.Color.Black;
-            this.numberMarginForeColorButton.Location = new System.Drawing.Point(188, 100);
+            this.numberMarginForeColorButton.Location = new System.Drawing.Point(251, 123);
+            this.numberMarginForeColorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numberMarginForeColorButton.Name = "numberMarginForeColorButton";
-            this.numberMarginForeColorButton.Size = new System.Drawing.Size(41, 23);
+            this.numberMarginForeColorButton.Size = new System.Drawing.Size(55, 28);
             this.numberMarginForeColorButton.TabIndex = 2;
             this.numberMarginForeColorButton.UseVisualStyleBackColor = false;
             this.numberMarginForeColorButton.Click += new System.EventHandler(this.numberMarginForeColorButton_Click);
@@ -720,27 +779,30 @@ namespace NotePad__
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 79);
+            this.label14.Location = new System.Drawing.Point(8, 97);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(164, 13);
+            this.label14.Size = new System.Drawing.Size(219, 17);
             this.label14.TabIndex = 1;
             this.label14.Text = "Number margin background color";
             // 
             // numberMarginBackColorButton
             // 
             this.numberMarginBackColorButton.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.numberMarginBackColorButton.Location = new System.Drawing.Point(188, 71);
+            this.numberMarginBackColorButton.Location = new System.Drawing.Point(251, 87);
+            this.numberMarginBackColorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numberMarginBackColorButton.Name = "numberMarginBackColorButton";
-            this.numberMarginBackColorButton.Size = new System.Drawing.Size(41, 23);
+            this.numberMarginBackColorButton.Size = new System.Drawing.Size(55, 28);
             this.numberMarginBackColorButton.TabIndex = 0;
             this.numberMarginBackColorButton.UseVisualStyleBackColor = false;
             this.numberMarginBackColorButton.Click += new System.EventHandler(this.numberMarginBackColorButton_Click);
             // 
             // setDefaultButton
             // 
-            this.setDefaultButton.Location = new System.Drawing.Point(338, 291);
+            this.setDefaultButton.Location = new System.Drawing.Point(451, 358);
+            this.setDefaultButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.setDefaultButton.Name = "setDefaultButton";
-            this.setDefaultButton.Size = new System.Drawing.Size(95, 23);
+            this.setDefaultButton.Size = new System.Drawing.Size(127, 28);
             this.setDefaultButton.TabIndex = 5;
             this.setDefaultButton.Text = "Set As Default";
             this.setDefaultButton.UseVisualStyleBackColor = true;
@@ -748,9 +810,9 @@ namespace NotePad__
             // 
             // PreferencesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 326);
+            this.ClientSize = new System.Drawing.Size(1508, 401);
             this.Controls.Add(this.setDefaultButton);
             this.Controls.Add(this.othersPanel);
             this.Controls.Add(this.languagePanel);
@@ -758,6 +820,8 @@ namespace NotePad__
             this.Controls.Add(this.generalPanel);
             this.Controls.Add(this.menuListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PreferencesForm";

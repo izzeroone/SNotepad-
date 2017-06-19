@@ -39,17 +39,19 @@ namespace NotePad__
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(527, 71);
+            this.label2.Location = new System.Drawing.Point(703, 87);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 23);
+            this.label2.Size = new System.Drawing.Size(139, 28);
             this.label2.TabIndex = 13;
             this.label2.Text = "Main Class Name";
             // 
             // mainClassTextBox
             // 
-            this.mainClassTextBox.Location = new System.Drawing.Point(643, 68);
+            this.mainClassTextBox.Location = new System.Drawing.Point(857, 84);
+            this.mainClassTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainClassTextBox.Name = "mainClassTextBox";
-            this.mainClassTextBox.Size = new System.Drawing.Size(152, 20);
+            this.mainClassTextBox.Size = new System.Drawing.Size(201, 22);
             this.mainClassTextBox.TabIndex = 11;
             this.mainClassTextBox.Text = "Helloworld.HelloWorld";
             // 
@@ -57,9 +59,10 @@ namespace NotePad__
             // 
             this.ExcuteButton.BackColor = System.Drawing.SystemColors.Control;
             this.ExcuteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExcuteButton.Location = new System.Drawing.Point(603, 199);
+            this.ExcuteButton.Location = new System.Drawing.Point(804, 245);
+            this.ExcuteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ExcuteButton.Name = "ExcuteButton";
-            this.ExcuteButton.Size = new System.Drawing.Size(160, 24);
+            this.ExcuteButton.Size = new System.Drawing.Size(213, 30);
             this.ExcuteButton.TabIndex = 9;
             this.ExcuteButton.Text = "&Compile and Execute";
             this.ExcuteButton.UseVisualStyleBackColor = false;
@@ -67,18 +70,20 @@ namespace NotePad__
             // 
             // codeRichTextBox
             // 
-            this.codeRichTextBox.Location = new System.Drawing.Point(22, 32);
+            this.codeRichTextBox.Location = new System.Drawing.Point(29, 39);
+            this.codeRichTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.codeRichTextBox.Name = "codeRichTextBox";
-            this.codeRichTextBox.Size = new System.Drawing.Size(489, 191);
+            this.codeRichTextBox.Size = new System.Drawing.Size(651, 234);
             this.codeRichTextBox.TabIndex = 14;
             this.codeRichTextBox.Text = resources.GetString("codeRichTextBox.Text");
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(527, 35);
+            this.label8.Location = new System.Drawing.Point(703, 43);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 13);
+            this.label8.Size = new System.Drawing.Size(72, 17);
             this.label8.TabIndex = 16;
             this.label8.Text = "Language";
             // 
@@ -91,17 +96,18 @@ namespace NotePad__
             "C++",
             "CSharp",
             "VisualBasic"});
-            this.laguageComboBox.Location = new System.Drawing.Point(643, 32);
+            this.laguageComboBox.Location = new System.Drawing.Point(857, 39);
+            this.laguageComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.laguageComboBox.Name = "laguageComboBox";
-            this.laguageComboBox.Size = new System.Drawing.Size(77, 21);
+            this.laguageComboBox.Size = new System.Drawing.Size(101, 24);
             this.laguageComboBox.TabIndex = 15;
             this.laguageComboBox.Text = "NormalText";
             // 
             // CompilerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 258);
+            this.ClientSize = new System.Drawing.Size(1120, 318);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.laguageComboBox);
             this.Controls.Add(this.codeRichTextBox);
@@ -109,6 +115,8 @@ namespace NotePad__
             this.Controls.Add(this.mainClassTextBox);
             this.Controls.Add(this.ExcuteButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CompilerForm";

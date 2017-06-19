@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_10928170315A16BD463B1C354E670F94"
+        "MsmKey" = "8:_0B2E8856CB92653D80EA1E7EC30DFBE4"
         "OwnerKey" = "8:_9560D7DDA3204BBB8D726A98F155617A"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -23,6 +23,12 @@
         {
         "MsmKey" = "8:_164FE295635D48E6BA37818AC8407406"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_32937A2539B25DA5E926BCC8E24D2041"
+        "OwnerKey" = "8:_9560D7DDA3204BBB8D726A98F155617A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -39,12 +45,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C94E960D3D185331B0996A0DD9FD35F0"
-        "OwnerKey" = "8:_9560D7DDA3204BBB8D726A98F155617A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_9560D7DDA3204BBB8D726A98F155617A"
         "MsmSig" = "8:_UNDEFINED"
@@ -52,13 +52,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C94E960D3D185331B0996A0DD9FD35F0"
+        "OwnerKey" = "8:_32937A2539B25DA5E926BCC8E24D2041"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_10928170315A16BD463B1C354E670F94"
+        "OwnerKey" = "8:_0B2E8856CB92653D80EA1E7EC30DFBE4"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -83,7 +83,7 @@
             {
             "Enabled" = "11:TRUE"
             "PromptEnabled" = "11:TRUE"
-            "PrerequisitesLocation" = "2:1"
+            "PrerequisitesLocation" = "2:2"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
                 "Items"
@@ -115,7 +115,7 @@
             {
             "Enabled" = "11:TRUE"
             "PromptEnabled" = "11:TRUE"
-            "PrerequisitesLocation" = "2:2"
+            "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
                 "Items"
@@ -156,14 +156,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_10928170315A16BD463B1C354E670F94"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0B2E8856CB92653D80EA1E7EC30DFBE4"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_10928170315A16BD463B1C354E670F94"
+                    "_0B2E8856CB92653D80EA1E7EC30DFBE4"
                     {
                     "Name" = "8:System.Net.Http.dll"
                     "Attributes" = "3:512"
@@ -207,6 +207,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_32937A2539B25DA5E926BCC8E24D2041"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MyTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_32937A2539B25DA5E926BCC8E24D2041"
+                    {
+                    "Name" = "8:MyTextBox.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MyTextBox.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_45336A38D5C642F1871525A914EFD2C6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B18F07A735D247E1B9D885640A844793"
             {
             "SourcePath" = "8:..\\NotePad++\\settings.xml"
@@ -225,37 +256,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C94E960D3D185331B0996A0DD9FD35F0"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MyTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_C94E960D3D185331B0996A0DD9FD35F0"
-                    {
-                    "Name" = "8:MyTextBox.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:MyTextBox.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_45336A38D5C642F1871525A914EFD2C6"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }

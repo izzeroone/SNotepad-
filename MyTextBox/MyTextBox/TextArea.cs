@@ -1548,7 +1548,7 @@ namespace MyTextBox
                             if (currentUndoAction.ActionName == "DeCharInsert")
                             {
                                 if (this.Text[this.SelectionStart - 1] == '{' || this.Text[this.SelectionStart - 1] == '(' ||
-                                    this.Text[this.SelectionStart - 1] == '[' || this.Text[this.SelectionStart - 1] == '<')
+                                    this.Text[this.SelectionStart - 1] == '[')
                                 {
                                     switch (this.Text[this.SelectionStart - 1])
                                     {
@@ -1570,13 +1570,6 @@ namespace MyTextBox
                                                 currentUndoAction.ReverseText += " ]";
                                                 break;
                                             }
-                                        case '<':
-                                            {
-                                                this.SelectedText = " >";
-                                                currentUndoAction.ReverseText += " >";
-                                                break;
-                                            }
-
                                     }
                                     this.SelectionStart = this.SelectionStart - 1;
                                     undoStack.Pop();
