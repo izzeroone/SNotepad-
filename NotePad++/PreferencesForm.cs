@@ -16,7 +16,6 @@ namespace NotePad__
         public PreferencesForm()
         {
             InitializeComponent();
-            
         }
 
 

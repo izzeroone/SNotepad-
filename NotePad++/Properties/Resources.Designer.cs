@@ -391,6 +391,32 @@ namespace NotePad__.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;Settings&gt;
+        ///  &lt;DefaultSettings&gt;
+        ///    &lt;General&gt;
+        ///      &lt;Theme&gt;Custom&lt;/Theme&gt;
+        ///      &lt;BackColor&gt;-1&lt;/BackColor&gt;
+        ///      &lt;ShowStatusBar&gt;True&lt;/ShowStatusBar&gt;
+        ///      &lt;HideTaskBar&gt;False&lt;/HideTaskBar&gt;
+        ///      &lt;New&gt;true&lt;/New&gt;
+        ///      &lt;Open&gt;true&lt;/Open&gt;
+        ///      &lt;Save&gt;True&lt;/Save&gt;
+        ///      &lt;DocumentMap&gt;True&lt;/DocumentMap&gt;
+        ///      &lt;Find&gt;True&lt;/Find&gt;
+        ///      &lt;FindAndReplace&gt;True&lt;/FindAndReplace&gt;
+        ///      &lt;ToUpper&gt;True&lt;/ToUpper&gt;
+        ///      &lt;Versions&gt;True&lt;/Versions&gt;
+        ///      &lt;Copy&gt;true&lt;/Copy&gt;
+        ///      &lt;C [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string settings {
+            get {
+                return ResourceManager.GetString("settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap toupper {
