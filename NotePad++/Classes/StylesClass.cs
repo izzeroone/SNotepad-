@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Xml;
 using System.Windows.Forms;
+using System.IO;
 
 //Styles Class
 namespace NotePad__
@@ -46,10 +47,14 @@ namespace NotePad__
 
 
         static XmlDocument xmlDoc = new XmlDocument();
-        private static string xmlFilePath = "../../settings.xml";
+        private static string xmlFilePath = Path.Combine(Application.UserAppDataPath, "settings.xml");
 
         public static void GetAllStylesIntoProperties()
         {
+            if(!File.Exists(xmlFilePath))
+            {
+                File.Copy(Path.Combine(Application.StartupPath, "settings.xml"), xmlFilePath);
+            }
             xmlDoc.Load(xmlFilePath);
 
             //Theme
