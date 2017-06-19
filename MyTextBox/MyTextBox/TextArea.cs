@@ -1983,6 +1983,10 @@ namespace MyTextBox
         #endregion
 
         #region Code folding
+        /// <summary>
+        /// Find folding in display
+        /// </summary>
+        /// <param name="selectedLanguage"></param>
         private void AutoCodeFolding(string selectedLanguage)
         {
             switch (selectedLanguage)
@@ -1999,7 +2003,10 @@ namespace MyTextBox
             // find the nested
             nestedList = FoldFinder.Instance.Find(this.Text, regexList, firstIndex, lastIndex);
         }
-
+        /// <summary>
+        /// add new folded to the list
+        /// </summary>
+        /// <param name="section"></param>
         private void NewFolded(SectionPosition section)
         {
             int maxIndex;
@@ -2020,10 +2027,17 @@ namespace MyTextBox
             SelectedText = "folded" + maxIndex;
             blockAllAction = false;
         }
-        //handle click to fold/unfold
+        /// <summary>
+        /// handle fold/unfold on mouse click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NumberMargin_MouseClick(object sender, MouseEventArgs e)
         {
             //blockRecordingUndo = true;
+            //save the cursor
+            int selectionStart = SelectionStart;
+            int selectionLength = SelectionLength;
             string nestedText;
             FoldedState currentFolded;
             //get the clicked line
@@ -2061,9 +2075,14 @@ namespace MyTextBox
                     NewFolded(section);
                 }
             }
+            //restore cursor
+            this.SelectionStart = selectionStart;
+            this.SelectionLength = selectionLength;
             //blockRecordingUndo = false;
         }
-        //fold all the text
+        /// <summary>
+        /// foll all the text
+        /// </summary>
         public void FoldAll()
         {
             blockRecordingUndo = true;
