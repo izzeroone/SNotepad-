@@ -2016,7 +2016,9 @@ namespace MyTextBox
             Select(section.Start + 1, section.End - section.Start - 2);
             string nestedText = SelectedText;
             foldedList.Add(maxIndex, new FoldedState() { Header = maxIndex, Content = nestedText});
+            blockAllAction = true;
             SelectedText = "folded" + maxIndex;
+            blockAllAction = false;
         }
         //handle click to fold/unfold
         private void NumberMargin_MouseClick(object sender, MouseEventArgs e)
@@ -2114,8 +2116,12 @@ namespace MyTextBox
                     {
                         try
                         {
+                            //Unfold the code
                             currentFolded = foldedList[foldedIndex];
+                            blockAllAction = true;
                             SelectedText = currentFolded.Content;
+                            foldedList.Remove(foldedIndex);
+                            blockAllAction = false;
                             // Unfolded code may contain fold code, so we scan again
                             Unfold(section.Start + 1, section.Start + currentFolded.Content.Length);
                             // Unfolded change the location of the nested code, so we scan again, ignore recently unfolded code

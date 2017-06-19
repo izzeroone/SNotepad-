@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0C4DBD48-F6C4-4A32-849D-60D1F0BDFF22}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NotePad__</RootNamespace>
     <AssemblyName>NotePad++</AssemblyName>
@@ -125,7 +125,9 @@
     <None Include="Resources\Close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="favicon.ico" />
+    <Content Include="favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ReadMe.txt" />
     <Content Include="settings.xml">
       <SubType>Designer</SubType>
