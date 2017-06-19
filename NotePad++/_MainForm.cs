@@ -395,9 +395,9 @@ namespace NotePad__
         {
             TabPage tabPage = TabControlClass.CreateNewTabPage("ReadMe.txt");
             TextArea textArea = TabControlClass.CurrentTextArea;
-            if (File.Exists("../../ReadMe.txt"))
+            if (File.Exists(Path.Combine(Application.StartupPath, "ReadMe.txt")))
             {
-                textArea.Text = File.ReadAllText("../../ReadMe.txt");
+                textArea.Text = File.ReadAllText(Path.Combine(Application.StartupPath, "ReadMe.txt"));
             }
             tabPage.Text = tabPage.Text.Replace("*", "");
             textArea.ReadOnly = true;

@@ -131,7 +131,9 @@
     <Content Include="favicon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ReadMe.txt" />
+    <Content Include="ReadMe.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Dtafalonso-Android-Lollipop-Settings.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

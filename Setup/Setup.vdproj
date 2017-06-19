@@ -64,13 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0B2E8856CB92653D80EA1E7EC30DFBE4"
+        "OwnerKey" = "8:_32937A2539B25DA5E926BCC8E24D2041"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_32937A2539B25DA5E926BCC8E24D2041"
+        "OwnerKey" = "8:_0B2E8856CB92653D80EA1E7EC30DFBE4"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -175,6 +175,11 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
+                    "_0B2E8856CB92653D80EA1E7EC30DFBE4"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -221,6 +226,11 @@
             "AssemblyAsmDisplayName" = "8:MyTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_32937A2539B25DA5E926BCC8E24D2041"
+                    {
+                    "Name" = "8:MyTextBox.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:MyTextBox.dll"
             "TargetName" = "8:"
@@ -368,18 +378,18 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Notepad++"
         "ProductCode" = "8:{4E2697A3-D9BE-4EFF-802C-E84A989BBF5D}"
-        "PackageCode" = "8:{0E31244D-CDED-4DC7-9B9F-5028E8EA0167}"
+        "PackageCode" = "8:{07157C3C-23FD-4632-A20A-7C8C5E264BB0}"
         "UpgradeCode" = "8:{0BF8264E-0146-4F4A-BCDB-F3A641A592A5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:TRUE"
+        "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8:UnknownCompany"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Setup"
+        "Title" = "8:Setup Notepad++"
         "Subject" = "8:"
         "ARPCONTACT" = "8:UnknownCompany"
         "Keywords" = "8:"
